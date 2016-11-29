@@ -1,8 +1,5 @@
 \documentclass{beamer}
 \usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
 \usepackage{graphicx}
 \usepackage{subfiles}
 
@@ -11,43 +8,54 @@
 
 \beamertemplatenavigationsymbolsempty
 
-\title{Funktionale Programierung}
-\subtitle{Concurrency \& Parallelism}
+\usetheme[noflama]{custom}
+
+\title{Funktionale \break Programierung}
+\subtitle{Nebenläufigkeit \& Parallelisierung}
 \author{Jan-Philipp Willem}
-\institute{Hochschule Mannheim}
-\date{SEM WS2016, \par Prof. Dr. Sandro Leuchter}
-
-
+\institute{
+  Hochschule Mannheim\\
+  Fakultät für Informatik\\
+  Prof. Dr. Sandro Leuchter
+}
+\date{Seminar, WS2016}
 
 \begin{document}
-\begin{frame}<handout:0>
-  \frametitle{..?}
+
+\begin{frame}[noframenumbering,plain]
+  \frametitle{Was wird hier gezeigt?}
   \centering
-  \includegraphics[width=1.0\textwidth]{moores_law.pdf}
+  \includegraphics[width=0.9\textwidth]{moores_law.pdf}
 \end{frame}
  
-\begin{frame}
-  \frametitle{Microprocessor Transistor Counts 1971-2011 \& Moore's Law}
+\begin{frame}[noframenumbering,plain]
+  \frametitle{Transistor Counts 1971-2011 \& Moore's Law}
   \centering
-  \includegraphics[width=1.0\textwidth]{moores_law_with-labels.pdf}
+  \includegraphics[width=0.9\textwidth]{moores_law_with-labels.pdf}
 \end{frame}
 
-\frame{\titlepage}
+\maketitle
 
-\begin{frame}
-\frametitle{Table of Contents}
-\tableofcontents
+\section*{Gliederung}
+\begin{frame}[noframenumbering,plain]{Gliederung}
+  \tableofcontents[hideallsubsections]
 \end{frame}
+
+\note[itemize]{
+    \item The audience sees the slides, but you see your notes.
+    \bigskip
+    \item Or, if your don't have notes, you can use mirror mode.
+}
+
 
 \section[Bla]{Bla}
-\begin{frame}
-\frametitle{Sample frame title}
-This is a text in first frame. This is a text in first frame. This is a text in first frame.
+\begin{frame}{Sample frame title}
+\setcounter{framenumber}{1}
+  This is a text in first frame. This is a text in first frame. This is a text in first frame.
 \end{frame}
 
 \section[Foo]{Foo}
-\begin{frame}
-\frametitle{Sample frame title}
-This is a text in first frame. This is a text in first frame. This is a text in first frame.
+\begin{frame}{Sample frame title}
+  This is a text in first frame. This is a text in first frame. This is a text in first frame.
 \end{frame}
 \end{document}
