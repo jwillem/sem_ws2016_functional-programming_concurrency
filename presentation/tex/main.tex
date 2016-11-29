@@ -39,21 +39,16 @@
   \tableofcontents[hideallsubsections]
 \end{frame}
 
-\note[itemize]{
-    \item The audience sees the slides, but you see your notes.
-    \item Or, if your don't have notes, you can use mirror mode.
-}
-
-
-\section[Nebenläufigkeit oder Parallelisierung?]{Nebenläufigkeit / Parallelisierung}
+\section{Nebenläufigkeit / Parallelisierung}
   \begin{frame}{Parallel}
   \setcounter{framenumber}{1}
     \begin{columns}[c]
     \column{.5\textwidth}
       \begin{itemize}
         \item Synonyme: \texttt{nebeneinander, nebenläufig}
-        \item Informatik:\\parallel ≠ nebenläufig !
+        \item Informatik:\\parallel ≠ nebenläufig!
         \item „schneller als sequenzielles Programm, durch \alert{gleichzeitiges} Ausführen von Anweisungen“
+        \item Multi-Processing
       \end{itemize}
     \column{.5\textwidth}
     \includegraphics[width=\textwidth]{parallel.pdf}
@@ -61,16 +56,27 @@
   \end{frame}
 
   \note[itemize]{
-      \item Im Vergleich zu sequenziellem Programm
+      \item deutscher Begriff schwierig
       \item Aufteilen des Problems in Teilprobleme
       \item Teile können, müssen aber nicht zusammengehörend sein
   }
 
   \begin{frame}{Nebenläufig}
-    \begin{itemize}
-      \item Concurrent (engl.)
-    \end{itemize}
+    \begin{columns}[c]
+    \column{.5\textwidth}
+      \begin{itemize}
+        \item concurrent (engl.)
+        \item „Systeme, welche zur gleichen Zeit mehrere Aufgaben haben“
+        \item muss nicht zwangsläufig parallel sein
+        \item Multi-Tasking
+      \end{itemize}
+    \column{.5\textwidth}
+      \includegraphics[width=\textwidth]{concurrent.pdf}
+    \end{columns}
   \end{frame}
+  
+  \note[itemize]{
+  }
 
   \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism'}
     \begin{itemize}
@@ -87,12 +93,33 @@
 
 \section{Threads / Locking}
   \begin{frame}{Was ist ein Thread?}
-    \begin{itemize}
-      \item Punkt 1
-      \item Punkt 2
-    \end{itemize}
+    \begin{columns}[c]
+    \column{.5\textwidth}
+      \begin{itemize}
+        \item Shared Memory
+      \end{itemize}
+    \column{.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{threads.pdf}
+      \end{figure}
+    \end{columns}
   \end{frame}
   
+  \begin{frame}{Was ist ein Lock?}
+    \begin{columns}[c]
+    \column{.5\textwidth}
+      \begin{itemize}
+      \item{Dining philosophers problem}
+      \end{itemize}
+    \column{.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{philosophers_table.pdf}
+      \end{figure}
+    \end{columns}
+  \end{frame}
+
   \begin{frame}{Häufige Bugs}
     \begin{columns}[c]
     \column{.5\textwidth}
@@ -112,7 +139,7 @@
   
   \begin{frame}{Fazit: Threads Programming}
     \begin{itemize}
-      \item "State is Evil"
+      \item „State is Evil“
       \item Viele Sprachen besitzen threads als feature,
       \item wenige Sprachen helfen mit Tooling oder Abstraktion dem Programmierer selbst!
     \end{itemize}
@@ -148,7 +175,10 @@
     \begin{columns}[c]
     \column{.5\textwidth}
     \begin{itemize}
-      \item Punkt 1
+      \item unabhängige Akteure
+      \item Message-Passing
+      \item FIFO-Verhalten von Mailboxes
+      \item Locks werden nicht gebraucht
       \item Alternativen:
         \begin{itemize}
           \item Akka (Java/Scala)
@@ -159,7 +189,7 @@
         \end{itemize}
     \end{itemize}
     \column{.5\textwidth}
-      Img-Exp
+      \includegraphics[width=\textwidth]{actors.pdf}
     \end{columns}
   \end{frame}
   
@@ -181,8 +211,8 @@
     \column{.5\textwidth}
       \textbf{Vorteile}
       \begin{itemize}
-        \item Punkt 1
-        \item Punkt 2
+        \item composeability of behaviors
+        \item Art und Abfolge der Anweisung kann genau und deklarativ bestimmt werden
       \end{itemize}
     \column{.5\textwidth}
       \textbf{Nachteile}
