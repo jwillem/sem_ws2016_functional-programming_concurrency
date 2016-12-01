@@ -45,9 +45,9 @@
     \begin{columns}[c]
     \column{.5\textwidth}
       \begin{itemize}
-        \item Synonyme: \texttt{nebeneinander, nebenläufig}
+        \item Synonyme: \textit{nebeneinander, nebenläufig}
         \item Informatik:\\parallel ≠ nebenläufig!
-        \item „schneller als sequenzielles Programm, durch \alert{gleichzeitiges} Ausführen von Anweisungen“
+        \item „schneller als sequenzielles Programm, durch gleichzeitiges Ausführen von \alert{Anweisungen}“
         \item Multi-Processing
       \end{itemize}
     \column{.5\textwidth}
@@ -66,7 +66,7 @@
     \column{.5\textwidth}
       \begin{itemize}
         \item concurrent (engl.)
-        \item „Systeme, welche zur gleichen Zeit mehrere Aufgaben haben“
+        \item „Systeme, welche zur gleichen Zeit mehrere \alert{Aufgaben} haben“
         \item muss nicht zwangsläufig parallel sein
         \item Multi-Tasking
       \end{itemize}
@@ -78,7 +78,7 @@
   \note[itemize]{
   }
 
-  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism'}
+  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (1)}
     \begin{itemize}
       \item „Concurrency is about dealing with lots of things at once.“
       \item „Parallelism is about doing lots of things at once.“
@@ -90,6 +90,34 @@
       \item Google, Go-Lang
       \item interessanter Talk auf Youtube
   }
+
+  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (2)}
+    \includegraphics[width=\textwidth]{gophersimple1.pdf}
+    \begin{itemize}
+      \item sequenziell
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (3)}
+    \includegraphics[width=\textwidth]{gophersimple3.pdf}
+    \begin{itemize}
+      \item mehrere Cores
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (4)}
+    \includegraphics[width=\textwidth]{gophersimple2.pdf}
+    \begin{itemize}
+      \item parallel
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (5)}
+    \includegraphics[width=\textwidth]{gophercomplex0.pdf}
+    \begin{itemize}
+      \item concurrent
+    \end{itemize}
+  \end{frame}
 
 \section{Threads / Locking}
   \begin{frame}{Was ist ein Thread?}
@@ -140,10 +168,13 @@
   \begin{frame}{Fazit: Threads Programming}
     \begin{itemize}
       \item „State is Evil“
-      \item Viele Sprachen besitzen threads als feature,
-      \item wenige Sprachen helfen mit Tooling oder Abstraktion dem Programmierer selbst!
     \end{itemize}
   \end{frame}
+  
+  \note[itemize]{
+      \item Viele Sprachen besitzen threads als feature,
+      \item wenige Sprachen helfen mit Tooling oder Abstraktion dem Programmierer selbst!
+  }
 
 \section{Functional Paradigm 101}
   \begin{frame}{Functional Paradigm 101}
@@ -177,7 +208,7 @@
     \begin{itemize}
       \item unabhängige Akteure
       \item Message-Passing
-      \item FIFO-Verhalten von Mailboxes
+      \item FIFO-Verhalten von \alert{Mailboxes}
       \item Locks werden nicht gebraucht
       \item Alternativen:
         \begin{itemize}
