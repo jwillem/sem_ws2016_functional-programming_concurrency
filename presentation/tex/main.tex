@@ -2,7 +2,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{graphicx}
 \usepackage{subfiles}
-
+\usepackage{listings}
 
 \graphicspath{{resources/}}
 
@@ -30,6 +30,7 @@
 \begin{frame}[noframenumbering,plain]
   \frametitle{Transistor Counts 1971-2011 \& Moore's Law}
   \includegraphics[width=0.9\textwidth]{moores_law_with-labels.pdf}
+  jhsdjshdsjdhsjdhsdjsh.
 \end{frame}
 
 \maketitle
@@ -101,7 +102,7 @@
   \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (3)}
     \includegraphics[width=\textwidth]{gophersimple3.pdf}
     \begin{itemize}
-      \item mehrere Cores
+      \item mehrere Cores, jedoch keine Optimierung
     \end{itemize}
   \end{frame}
 
@@ -224,13 +225,58 @@
     \end{columns}
   \end{frame}
   
-  \begin{frame}{List-Processing in Elixir: map}
+  \begin{frame}{List-Processing in Elixir: map (1)}
+    \begin{columns}[c]
+    \column{.5\textwidth}
+      \begin{itemize}
+        \item Traversieren der Elemente
+        \item Nutzen von transform-function
+        \item Ergebnis von gleichem oder verschiedenen Collection-Typ
+      \end{itemize}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{map.pdf}
+    \end{columns}
   \end{frame}
 
-  \begin{frame}{List-Processing in Elixir: reduce}
+  \begin{frame}{List-Processing in Elixir: map (2)}
+    % \begin{lstlisting}
+      % iex> Enum.map([1, 2, 3], fn x -> x * 2 end)
+    %   [2, 4, 6]
+    % \begin{lstlisting}
   \end{frame}
 
-  \begin{frame}{List-Processing in Elixir: filter}
+  \begin{frame}{List-Processing in Elixir: reduce (1)}
+    \begin{columns}[c]
+    \column{.5\textwidth}
+      \begin{itemize}
+        \item Traversieren der Elemente
+        \item Nutzen von aggregate-function und Startwert
+        \item Mitführen von accumulator
+        \item „Reduzieren“ der Elemente auf einzelnen gemeinsamen Wert
+        \item auch \texttt{foldr, foldl} genannt
+      \end{itemize}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{reduce.pdf}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{List-Processing in Elixir: reduce (2)}
+  \end{frame}
+
+  \begin{frame}{List-Processing in Elixir: filter (1)}
+    \begin{columns}[c]
+    \column{.5\textwidth}
+      \begin{itemize}
+        \item Traversieren der Elemente
+        \item Nutzen von predicate-function
+        \item Teilmenge bilden, welche Elemente enhthält, welche Anforderung erfüllen
+      \end{itemize}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{filter.pdf}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{List-Processing in Elixir: filter (2)}
   \end{frame}
 
   \begin{frame}{Elixir-Streams}
