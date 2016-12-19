@@ -30,7 +30,6 @@
 \begin{frame}[noframenumbering,plain]
   \frametitle{Transistor Counts 1971-2011 \& Moore's Law}
   \includegraphics[width=0.9\textwidth]{moores_law_with-labels.pdf}
-  jhsdjshdsjdhsjdhsdjsh.
 \end{frame}
 
 \maketitle
@@ -239,10 +238,24 @@
   \end{frame}
 
   \begin{frame}{List-Processing in Elixir: map (2)}
-    % \begin{lstlisting}
-      % iex> Enum.map([1, 2, 3], fn x -> x * 2 end)
-    %   [2, 4, 6]
-    % \begin{lstlisting}
+    \begin{itemize}[<+->]
+    \item
+      \texttt{iex> Enum.map [1, 2, 3], fn x -> x + 1 end} \\
+      \textbf{[2, 3, 4]} \\
+    \item
+      \texttt{iex> Enum.map [1, 2, 3], \&(\&1 * \&1)} \\
+      \textbf{[1, 4, 9]} \\
+    \item
+      \texttt{iex> defmodule Math do \\
+            ...> def multWithKey(\{k, v\}), do: k * v \\
+            ...> end\\
+      }
+      \textbf{...} \\
+      \texttt{iex> list = Enum.with\_index([1, 2, 3])} \\
+      \textbf{[\{1, 0\}, \{2, 1\}, \{3, 2\}]} \\
+      \texttt{iex> Enum.map list, \&Math.multWithKey/1} \\
+      \textbf{[0, 2, 6]} \\
+    \end{itemize}
   \end{frame}
 
   \begin{frame}{List-Processing in Elixir: reduce (1)}
@@ -261,6 +274,10 @@
   \end{frame}
 
   \begin{frame}{List-Processing in Elixir: reduce (2)}
+    \begin{itemize}[<+->]
+      \item \texttt{iex> List.foldl [1, 2, 3, 4], 0, \&(\&1 + \&2)} \\
+            \textbf{10}
+    \end{itemize}
   \end{frame}
 
   \begin{frame}{List-Processing in Elixir: filter (1)}
