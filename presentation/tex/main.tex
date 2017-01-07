@@ -13,8 +13,7 @@
 \title{Funktionale \break Programierung}
 \subtitle{Nebenläufigkeit \& Parallelisierung}
 \author{Jan-Philipp Willem}
-\institute{
-  Prof. Dr. Sandro Leuchter\\
+\institute{Prof. Dr. Sandro Leuchter\\
   Fakultät für Informatik\\
   Hochschule Mannheim
 }
@@ -26,12 +25,19 @@
   \frametitle{Was wird hier gezeigt?}
   \includegraphics[width=0.9\textwidth]{moores_law.pdf}
 \end{frame}
- 
+
 \begin{frame}[noframenumbering,plain]
   \frametitle{Transistor Counts 1971-2011 \& Moore's Law}
   \includegraphics[width=0.9\textwidth]{moores_law_with-labels.pdf}
 \end{frame}
 
+\begin{frame}[noframenumbering,plain]{arsTECHNICA UK - 03.01.2017 (1)}
+  \includegraphics[width=\textwidth]{news.pdf}
+\end{frame}
+
+\begin{frame}[noframenumbering,plain]{arsTECHNICA UK - 03.01.2017 (2)}
+  „With low-power laptops and all-in-ones continuing to outsell desktops—and with high-end workloads like video editing, 3D animation, and machine learning increasingly being offloaded to GPUs -- perhaps it was inevitable that Intel would stop caring so much about its high-end consumer CPUs.“
+\end{frame}
 \maketitle
 
 \section*{Gliederung}
@@ -74,11 +80,10 @@
       \includegraphics[width=\textwidth]{concurrent.pdf}
     \end{columns}
   \end{frame}
-  
-  \note[itemize]{
-  }
 
-  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (1)}
+  \note[itemize]{}
+
+  \begin{frame}{Rob Pike - „Concurrency Is Not Parallelism“ (1)}
     \begin{itemize}
       \item „Concurrency is about dealing with lots of things at once.“
       \item „Parallelism is about doing lots of things at once.“
@@ -91,90 +96,90 @@
       \item interessanter Talk auf Youtube
   }
 
-  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (2)}
+  \begin{frame}{Rob Pike - „Concurrency Is Not Parallelism“ (2)}
     \includegraphics[width=\textwidth]{gophersimple1.pdf}
     \begin{itemize}
       \item sequenziell
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (3)}
+  \begin{frame}{Rob Pike - „Concurrency Is Not Parallelism“ (3)}
     \includegraphics[width=\textwidth]{gophersimple3.pdf}
     \begin{itemize}
       \item mehrere Cores, jedoch keine Optimierung
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (4)}
+  \begin{frame}{Rob Pike - „Concurrency Is Not Parallelism“ (4)}
     \includegraphics[width=\textwidth]{gophersimple2.pdf}
     \begin{itemize}
       \item parallel
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Rob Pike - 'Concurrency Is Not Parallelism' (5)}
+  \begin{frame}{Rob Pike - „Concurrency Is Not Parallelism“ (5)}
     \includegraphics[width=\textwidth]{gophercomplex0.pdf}
     \begin{itemize}
       \item concurrent
     \end{itemize}
   \end{frame}
 
-\section{Threads / Locking}
-  \begin{frame}{Was ist ein Thread?}
-    \begin{columns}[c]
-    \column{.5\textwidth}
-      \begin{itemize}
-        \item Shared Memory
-      \end{itemize}
-    \column{.5\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{threads.pdf}
-      \end{figure}
-    \end{columns}
-  \end{frame}
-  
-  \begin{frame}{Was ist ein Lock?}
-    \begin{columns}[c]
-    \column{.5\textwidth}
-      \begin{itemize}
-      \item{Dining philosophers problem}
-      \end{itemize}
-    \column{.5\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{philosophers_table.pdf}
-      \end{figure}
-    \end{columns}
-  \end{frame}
-
-  \begin{frame}{Häufige Bugs}
-    \begin{columns}[c]
-    \column{.5\textwidth}
-      \textbf{Race-Condition}
-      \begin{itemize}
-        \item ++
-        \item ++
-      \end{itemize}
-    \column{.5\textwidth}
-      \textbf{Deadlock}
-      \begin{itemize}
-        \item --
-        \item --
-      \end{itemize}
-    \end{columns}
-  \end{frame}
-  
-  \begin{frame}{Fazit: Threads Programming}
-    \begin{itemize}
-      \item „State is Evil“
-    \end{itemize}
-  \end{frame}
-  
-  \note[itemize]{
-      \item Viele Sprachen besitzen threads als feature,
-      \item wenige Sprachen helfen mit Tooling oder Abstraktion dem Programmierer selbst!
-  }
+% \section{Threads / Locking}
+%   \begin{frame}{Was ist ein Thread?}
+%     \begin{columns}[c]
+%     \column{.5\textwidth}
+%       \begin{itemize}
+%         \item Shared Memory
+%       \end{itemize}
+%     \column{.5\textwidth}
+%       \begin{figure}
+%         \centering
+%         \includegraphics[width=\textwidth]{threads.pdf}
+%       \end{figure}
+%     \end{columns}
+%   \end{frame}
+%
+%   \begin{frame}{Was ist ein Lock?}
+%     \begin{columns}[c]
+%     \column{.5\textwidth}
+%       \begin{itemize}
+%       \item{Dining philosophers problem}
+%       \end{itemize}
+%     \column{.5\textwidth}
+%       \begin{figure}
+%         \centering
+%         \includegraphics[width=\textwidth]{philosophers_table.pdf}
+%       \end{figure}
+%     \end{columns}
+%   \end{frame}
+%
+%   \begin{frame}{Häufige Bugs}
+%     \begin{columns}[c]
+%     \column{.5\textwidth}
+%       \textbf{Race-Condition}
+%       \begin{itemize}
+%         \item ++
+%         \item ++
+%       \end{itemize}
+%     \column{.5\textwidth}
+%       \textbf{Deadlock}
+%       \begin{itemize}
+%         \item --
+%         \item --
+%       \end{itemize}
+%     \end{columns}
+%   \end{frame}
+%
+%   \begin{frame}{Fazit: Threads Programming}
+%     \begin{itemize}
+%       \item „State is Evil“
+%     \end{itemize}
+%   \end{frame}
+%
+%   \note[itemize]{
+%       \item Viele Sprachen besitzen threads als feature,
+%       \item wenige Sprachen helfen mit Tooling oder Abstraktion dem Programmierer selbst!
+%   }
 
 \section{Functional Paradigm 101}
   \begin{frame}{Functional Paradigm 101}
@@ -223,7 +228,7 @@
       \includegraphics[width=\textwidth]{actors.pdf}
     \end{columns}
   \end{frame}
-  
+
   \begin{frame}{List-Processing in Elixir: map (1)}
     \begin{columns}[c]
     \column{.5\textwidth}
@@ -286,7 +291,7 @@
       \begin{itemize}
         \item Traversieren der Elemente
         \item Nutzen von predicate-function
-        \item Teilmenge bilden, welche Elemente enhthält, welche Anforderung erfüllen
+        \item Teilmenge bilden, welche Elemente enthält, welche Anforderung erfüllen
       \end{itemize}
     \column{.5\textwidth}
     \includegraphics[width=\textwidth]{filter.pdf}
@@ -316,7 +321,7 @@
       \end{itemize}
     \end{columns}
   \end{frame}
-  
+
   \begin{frame}{Functional Style in Imperative Languages}
   \end{frame}
 \end{document}
