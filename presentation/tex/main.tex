@@ -256,7 +256,6 @@
       \item „pure“, „data-in, data-out“, EVA
       \item functions as first-class citizens
       \item lambdas, callbacks
-      \item reine Funktionale Sprachen
     \end{itemize}
   \end{frame}
 
@@ -511,11 +510,12 @@ end\\
     \end{itemize}
   \end{frame}
   
-  \note[itemize]{
-     \item weil otp für Supervisioning in anwendung nutzbar
-  }
+  % \note[itemize]{
+  %    \item weil otp für Supervisioning in anwendung nutzbar
+  % }
 
   \begin{frame}{OTP-Abstraction: Tasks (2)}
+    \texttt{
     defmodule Parallel do\\
     ~~def pmap(collection, func) do\\
     ~~~~collection \\
@@ -525,8 +525,11 @@ end\\
     end\\
     ~\\
     Parallel.pmap 1..1000, \&(\&1 * \&1)\\
+  }
     \begin{itemize}
-      \item<2-2>
+      \item<2-2> noch cleaner als mit \texttt{spawn}
+      \item<2-2> möglich Fallstricke sind bereits optimiert
+      \item<2-2> weil otp direkt für supervisioning nutzbar
     \end{itemize}
   \end{frame}
 
